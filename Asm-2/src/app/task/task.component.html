@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1>Add product</h1>
+      <form action="" #create="ngForm" (ngSubmit)="onCreate(create.value)">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInputDisabled"
+            name="name"
+            ngModel
+            required
+            minlength="3"
+            #nameInput="ngModel"
+          />
+
+          <label for="floatingInputDisabled">Name</label>
+          <div
+            *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)"
+            class="text-danger"
+          >
+            <div *ngIf="nameInput.errors?.['required']">
+              Name canot be empty.
+            </div>
+            <div *ngIf="nameInput.errors?.['minlength']">
+              Name must be at least 3 characters long.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="priceInput"
+            name="price"
+            ngModel
+            required
+            #priceInput="ngModel"
+          />
+          <label for="priceInput">Price</label>
+          <div
+            *ngIf="
+              priceInput.invalid && (priceInput.dirty || priceInput.touched)
+            "
+            class="text-danger"
+          >
+            <div *ngIf="priceInput.errors?.['required']">
+              Price canot be empty.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            id="desInput"
+            name="des"
+            ngModel
+            required
+            #desInput="ngModel"
+          ></textarea>
+          <label for="desInput">Description</label>
+          <div
+            *ngIf="desInput.invalid && (desInput.dirty || desInput.touched)"
+            class="text-danger"
+          >
+            <div *ngIf="desInput.errors?.['required']">
+              Description canot be empty.
+            </div>
+            <!-- Add additional validation messages if needed -->
+          </div>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="imageInput"
+            name="image"
+            ngModel
+            required
+            #imageInput="ngModel"
+          />
+          <label for="imageInput">Image</label>
+          <div
+            *ngIf="
+              imageInput.invalid && (imageInput.dirty || imageInput.touched)
+            "
+            class="text-danger"
+          >
+            <div *ngIf="imageInput.errors?.['required']">
+              Image canot be empty.
+            </div>
+            <!-- Add additional validation messages if needed -->
+          </div>
+        </div>
+
+        <div class="d-grid gap-2">
+          <input
+            type="submit"
+            class="btn btn-outline-secondary text-dark"
+            value="Add product"
+          />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

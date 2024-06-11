@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="bg-secondary">
+        <nav>
+          <ul>
+            <li><a routerLink=""></a></li>
+            <li><a class="text-dark" routerLink="/das">List</a></li>
+            <li><a class="text-dark" routerLink="/add">Admin</a></li>
+            <li><a class="text-dark" routerLink="/task">Add</a></li>
+            <li><a class="text-dark" routerLink="/login">Login</a></li>
+            <!-- <li><a href=""></a></li> -->
+          </ul>
+        </nav>
+        <!-- ô tìm kiếm -->
+        <form class="">
+          <input class="form-control bg-secondary text-light" type="search" />
+          <input type="submit" class="btn btn-light text-dark" value="Search" />
+        </form>
+      </header>
+      <!--  -->
+      <main><router-outlet /></main>
+    </div>
+  </body>
+</html>
